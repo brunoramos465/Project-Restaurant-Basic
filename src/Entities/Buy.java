@@ -1,6 +1,9 @@
 package Entities;
 
 import Entities.enums.Dishes;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Buy {
 	
@@ -9,6 +12,8 @@ public class Buy {
 	private Integer quantidade;
 	private Double valor;
 	
+	 List<Buy> listBuy = new ArrayList<Buy>();
+
 	public Buy() {
 		
 	}
@@ -20,7 +25,9 @@ public class Buy {
 		this.valor = valor;
 	}
 	
+
 	public String getFornecedor() {
+		
 		return fornecedor;
 	}
 	
@@ -44,7 +51,7 @@ public class Buy {
 		this.quantidade = quantidade;
 	}
 	
-	public Double getvalor() {
+	public Double getValor() {
 		return valor;
 	}
 	
@@ -52,12 +59,35 @@ public class Buy {
 		this.valor = valor;
 	}
 	
+	public void getListBuy(Buy item) {
+		listBuy.add(item);
+	}
+	
+	public void removeListBuy(Buy item) {
+		listBuy.remove(item);
+	}
+
+	
 	public String ToString() {
-		return "Fornecedor: " + fornecedor +
+		StringBuilder sb = new StringBuilder();
+		for(Buy list: listBuy) {
+			sb.append("Fornecedor: " + list.getFornecedor() +
+				", Pratos : " + list.getPratos() + 
+				", Qtd:  " + list.getQuantidade() + 
+				", Valor: " + list.getValor() + "\n");
+		}
+		
+		return sb.toString();
+		/*return "Fornecedor: " + fornecedor +
 				", Pratos : " + pratos + 
 				", Qtd:  " + quantidade + 
-				", Valor: " + valor;
+				", Valor: " + valor;*/
 	}
+
+	
+	
+	
+	
 	
 
 }
