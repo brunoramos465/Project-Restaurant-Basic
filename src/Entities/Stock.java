@@ -5,20 +5,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Buy {
+public class Stock {
 	
 	private String fornecedor;
 	private Dishes pratos;
 	private Integer quantidade;
 	private Double valor;
 	
-	 List<Buy> listBuy = new ArrayList<Buy>();
+	 List<Stock> listBuy = new ArrayList<Stock>();
 
-	public Buy() {
+	public Stock() {
 		
 	}
 	
-	public Buy(String fornecedor, Dishes pratos, Integer quantidade, Double valor) {
+	public Stock(String fornecedor, Dishes pratos, Integer quantidade, Double valor) {
 		this.fornecedor = fornecedor;
 		this.pratos = pratos;
 		this.quantidade = quantidade;
@@ -59,18 +59,18 @@ public class Buy {
 		this.valor = valor;
 	}
 	
-	public void getListBuy(Buy item) {
+	public void getListBuy(Stock item) {
 		listBuy.add(item);
 	}
 	
-	public void removeListBuy(Buy item) {
+	public void removeListBuy(Stock item) {
 		listBuy.remove(item);
 	}
 
 	
 	public String ToString() {
 		StringBuilder sb = new StringBuilder();
-		for(Buy list: listBuy) {
+		for(Stock list: listBuy) {
 			sb.append("Fornecedor: " + list.getFornecedor() +
 				", Pratos : " + list.getPratos() + 
 				", Qtd:  " + list.getQuantidade() + 

@@ -1,24 +1,28 @@
 package Application;
 
-import Entities.Buy;
+import Entities.Stock;
 import Entities.enums.Dishes;
+import Entities.enums.City;
 
 public class Program {
 	 
 	public static void main(String[] args) {
 		
-		Buy buy = new Buy();
+		Stock stock = new Stock();
 		
-		Buy Compra1 = new Buy("ATACADÃO",Dishes.PRATO_PRINCIPAL,10,50.00);
-		Buy Compra2 = new Buy("VENDA",Dishes.PRATO_PRINCIPAL,20,80.00);
-		Buy Compra3 = new Buy("opções",Dishes.PRATO_PRINCIPAL,40,00.00);
-
-		buy.getListBuy(Compra1);
-		buy.getListBuy(Compra2);
-		buy.getListBuy(Compra3);
-
-		System.out.print(buy.ToString());
 		
+		Stock fornecedor1 = new Stock("ATACADÃO",Dishes.PRATO_PRINCIPAL,10,50.00);
+		Stock fornecedor2 = new Stock("VENDA",Dishes.PRATO_PRINCIPAL,20,80.00);
+		Stock fornecedor3 = new Stock("opções",Dishes.PRATO_PRINCIPAL,40,00.00);
+
+		stock.getListBuy(fornecedor1);
+		stock.getListBuy(fornecedor2);
+		stock.getListBuy(fornecedor3);
+		
+		
+		System.out.print(stock.ToString());
+		System.out.print(City.BELO_HORIZONTE.getValor());
+
 
 
 	}
