@@ -3,6 +3,7 @@ package Application;
 import Entities.Stock;
 import Entities.enums.Dishes;
 import Entities.enums.City;
+import Entities.Sale;
 
 public class Program {
 	 
@@ -22,8 +23,12 @@ public class Program {
 		
 		System.out.print(stock.ToString());
 		System.out.print(City.BELO_HORIZONTE.getValor());
+		
+		Sale sale = new Sale();
+		
+		Sale cliente1 = new Sale("Bruno", "Rua A", City.CONTAGEM, Dishes.PRATO_PRINCIPAL);
 
-
+		System.out.println(cliente1);
 
 	}
 	
